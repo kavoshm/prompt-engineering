@@ -1,0 +1,96 @@
+{
+  "results": [
+    {
+      "id": "scenario_001",
+      "description": "Epigastric pain with cardiac risk factors and ECG changes",
+      "direct_classification": {
+        "urgency_level": 3,
+        "primary_concern": "Epigastric pain, likely GERD exacerbation",
+        "recommended_action": "GI workup, PPI trial"
+      },
+      "cot_classification": {
+        "step1_symptoms": ["epigastric pain (burning)", "diaphoresis", "anxiety", "non-radiating pain"],
+        "step2_red_flags": ["diaphoresis with pain", "non-specific ST changes on ECG", "multiple cardiac risk factors (DM, HTN, smoking)"],
+        "step3_differential": "Acute coronary syndrome (NSTEMI) — must rule out despite GERD history given cardiac risk factor burden and ECG changes",
+        "step4_risk_factors": ["type 2 diabetes", "hypertension", "current smoker", "age 55", "male sex"],
+        "urgency_level": 5,
+        "primary_concern": "Possible acute coronary syndrome",
+        "recommended_action": "Emergent cardiology evaluation, serial troponins, continuous monitoring"
+      },
+      "expected_urgency": 5,
+      "direct_match": false,
+      "cot_match": true
+    },
+    {
+      "id": "scenario_002",
+      "description": "Thunderclap headache, sudden onset during exercise",
+      "direct_classification": {
+        "urgency_level": 4,
+        "primary_concern": "Severe headache",
+        "recommended_action": "Neurology consult, imaging"
+      },
+      "cot_classification": {
+        "step1_symptoms": ["worst headache of life", "sudden onset", "9/10 severity", "reluctance to flex neck"],
+        "step2_red_flags": ["thunderclap headache", "worst headache of life", "sudden onset during exertion", "possible meningismus"],
+        "step3_differential": "Subarachnoid hemorrhage until proven otherwise",
+        "step4_risk_factors": ["no prior migraine history", "exercise-triggered onset"],
+        "urgency_level": 5,
+        "primary_concern": "Suspected subarachnoid hemorrhage",
+        "recommended_action": "Emergent non-contrast CT head, LP if CT negative, neurosurgery consult"
+      },
+      "expected_urgency": 5,
+      "direct_match": false,
+      "cot_match": true
+    },
+    {
+      "id": "scenario_003",
+      "description": "GI bleeding on warfarin with orthostatic hypotension",
+      "direct_classification": {
+        "urgency_level": 4,
+        "primary_concern": "Upper GI bleeding",
+        "recommended_action": "IV access, type and screen, GI consult"
+      },
+      "cot_classification": {
+        "step1_symptoms": ["melena (black tarry stools) x3 days", "fatigue", "lightheadedness with standing"],
+        "step2_red_flags": ["melena indicating upper GI hemorrhage", "orthostatic hypotension (BP drop >20 systolic)", "supratherapeutic INR (3.8)"],
+        "step3_differential": "Upper GI hemorrhage in anticoagulated patient with significant volume depletion",
+        "step4_risk_factors": ["supratherapeutic INR 3.8", "warfarin therapy", "atrial fibrillation", "age 70"],
+        "urgency_level": 4,
+        "primary_concern": "Upper GI bleed with hemodynamic compromise",
+        "recommended_action": "IV fluid resuscitation, hold warfarin, check H/H, type and screen, GI consult for endoscopy"
+      },
+      "expected_urgency": 4,
+      "direct_match": true,
+      "cot_match": true
+    },
+    {
+      "id": "scenario_004",
+      "description": "Viral URI in well-appearing child",
+      "direct_classification": {
+        "urgency_level": 1,
+        "primary_concern": "Viral upper respiratory infection",
+        "recommended_action": "Supportive care, return precautions"
+      },
+      "cot_classification": {
+        "step1_symptoms": ["fever 102.1F x2 days", "runny nose", "mild cough", "eating and drinking well"],
+        "step2_red_flags": [],
+        "step3_differential": "Viral upper respiratory infection",
+        "step4_risk_factors": [],
+        "urgency_level": 1,
+        "primary_concern": "Viral URI in well-appearing child",
+        "recommended_action": "Supportive care, antipyretics, adequate hydration, return if worsens"
+      },
+      "expected_urgency": 1,
+      "direct_match": true,
+      "cot_match": true
+    }
+  ],
+  "summary": {
+    "direct_accuracy": "50%",
+    "direct_correct": 2,
+    "cot_accuracy": "100%",
+    "cot_correct": 4,
+    "total_scenarios": 4,
+    "key_finding": "Chain-of-thought reasoning correctly identified 2 cases that direct classification missed — both involving subtle presentations where explicit reasoning through red flags and risk factors changed the urgency assessment."
+  }
+}

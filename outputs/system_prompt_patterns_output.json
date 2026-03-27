@@ -1,0 +1,87 @@
+{
+  "results": [
+    {
+      "pattern": "1. Minimal/Generic",
+      "response": {
+        "analysis": "The patient presents with B-symptoms (fever, night sweats, weight loss) and lymphadenopathy. This is concerning for lymphoma given the family history.",
+        "recommendation": "Further workup including biopsy of the neck mass is recommended."
+      }
+    },
+    {
+      "pattern": "2. Persona-Based (Expert)",
+      "response": {
+        "assessment": "42F with classic B-symptoms and cervical lymphadenopathy. Family history of lymphoma is significant.",
+        "differential_diagnosis": [
+          "Hodgkin lymphoma (most likely)",
+          "Non-Hodgkin lymphoma",
+          "Infectious mononucleosis",
+          "Sarcoidosis",
+          "Metastatic carcinoma"
+        ],
+        "recommended_workup": [
+          "Excisional biopsy of cervical node (NOT FNA)",
+          "CT chest/abdomen/pelvis with contrast",
+          "Flow cytometry",
+          "PET-CT if biopsy confirms lymphoma"
+        ]
+      }
+    },
+    {
+      "pattern": "3. Constraint-Heavy (Safety Rails)",
+      "response": {
+        "red_flags": [
+          "B-symptoms triad (fever, night sweats, weight loss)",
+          "Progressive lymphadenopathy",
+          "Family history of lymphoma",
+          "Elevated LDH"
+        ],
+        "differential_diagnosis": [
+          {"diagnosis": "Lymphoma", "probability": "high", "confidence": "high"},
+          {"diagnosis": "Infectious mononucleosis", "probability": "low", "confidence": "medium"},
+          {"diagnosis": "Reactive lymphadenopathy", "probability": "low", "confidence": "medium"},
+          {"diagnosis": "Sarcoidosis", "probability": "low", "confidence": "low"}
+        ],
+        "recommended_workup": [
+          "Excisional biopsy of cervical lymph node",
+          "CT chest/abdomen/pelvis",
+          "Peripheral blood flow cytometry",
+          "ESR, CRP, uric acid"
+        ],
+        "safety_net_instructions": "Return immediately if fever exceeds 103F, new difficulty breathing, sudden severe pain, or significant bleeding.",
+        "urgency_level": 4
+      }
+    },
+    {
+      "pattern": "4. Template-Driven (Extraction)",
+      "response": {
+        "demographics": {"age": 42, "sex": "F", "smoking_status": "never"},
+        "chief_complaint": "Fatigue, weight loss, fevers",
+        "symptom_duration": "3 weeks progressive",
+        "symptoms": ["fatigue", "unintentional weight loss (12 lbs)", "intermittent low-grade fevers", "night sweats", "painless cervical lymphadenopathy"],
+        "vital_signs": {"temp": "100.4F (max)"},
+        "lab_results": [
+          {"test": "WBC", "value": "15.2", "flag": "high"},
+          {"test": "Hgb", "value": "10.1", "flag": "low"},
+          {"test": "Platelets", "value": "425", "flag": "high"},
+          {"test": "LDH", "value": "340", "flag": "high"}
+        ],
+        "family_history": ["Lymphoma in mother"],
+        "physical_exam_findings": ["Painless, firm lump in left neck, growing"]
+      }
+    },
+    {
+      "pattern": "5. Safety-First (Triage)",
+      "response": {
+        "triage_class": "URGENT",
+        "flags": ["ONCOLOGY_REFERRAL_RECOMMENDED"],
+        "reasoning": "B-symptom triad with progressive lymphadenopathy and elevated LDH raises high suspicion for lymphoproliferative disorder. Not immediately life-threatening but requires prompt specialist evaluation.",
+        "recommended_next_steps": [
+          "Urgent oncology/hematology referral within 48 hours",
+          "Excisional biopsy scheduling",
+          "CT imaging"
+        ],
+        "time_to_physician_target": "24-48 hours"
+      }
+    }
+  ]
+}

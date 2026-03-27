@@ -1,0 +1,61 @@
+{
+  "comparison": [
+    {
+      "id": "note_001",
+      "expected": "emergency",
+      "zero_shot": "emergency",
+      "few_shot": "emergency",
+      "zero_shot_reasoning": "Acute chest pain with radiation, diaphoresis, hypertension, and tachycardia suggest acute coronary syndrome.",
+      "few_shot_reasoning": "Acute chest pain radiating to left arm and jaw with diaphoresis is a classic presentation for acute myocardial infarction. Requires immediate intervention."
+    },
+    {
+      "id": "note_002",
+      "expected": "routine",
+      "zero_shot": "routine",
+      "few_shot": "routine",
+      "zero_shot_reasoning": "Routine prenatal visit with no concerns.",
+      "few_shot_reasoning": "Preventive prenatal care visit at 28 weeks with no acute complaints or abnormal findings. All measurements within normal limits."
+    },
+    {
+      "id": "note_003",
+      "expected": "urgent",
+      "zero_shot": "emergency",
+      "few_shot": "urgent",
+      "zero_shot_reasoning": "COPD exacerbation with hypoxia requires emergency care.",
+      "few_shot_reasoning": "COPD exacerbation with accessory muscle use and hypoxia (SpO2 88%) requiring supplemental oxygen. Not immediately life-threatening but requires prompt medical attention and medication adjustment."
+    },
+    {
+      "id": "note_004",
+      "expected": "routine",
+      "zero_shot": "routine",
+      "few_shot": "routine",
+      "zero_shot_reasoning": "Follow-up for well-controlled diabetes.",
+      "few_shot_reasoning": "Follow-up visit for well-controlled type 2 diabetes with improving A1C. Stable chronic condition requiring continued management."
+    },
+    {
+      "id": "note_005",
+      "expected": "non_urgent",
+      "zero_shot": "non_urgent",
+      "few_shot": "non_urgent",
+      "zero_shot_reasoning": "Strep throat is a common infection treatable with antibiotics.",
+      "few_shot_reasoning": "Positive strep throat in a well-appearing child. Requires antibiotics but can be managed outpatient. Self-limiting with appropriate treatment."
+    },
+    {
+      "id": "note_006",
+      "expected": "non_urgent",
+      "zero_shot": "non_urgent",
+      "few_shot": "non_urgent",
+      "zero_shot_reasoning": "Sore throat with positive rapid strep in a child.",
+      "few_shot_reasoning": "Mild viral upper respiratory infection with positive strep. Self-limiting condition requiring only supportive care and antibiotics."
+    }
+  ],
+  "summary": {
+    "zero_shot_accuracy": "83%",
+    "zero_shot_correct": 5,
+    "zero_shot_total": 6,
+    "few_shot_accuracy": "100%",
+    "few_shot_correct": 6,
+    "few_shot_total": 6,
+    "improvement": "17 percentage points"
+  }
+}
